@@ -1,4 +1,4 @@
-i{
+/* i{
     text-decoration: none;
     color: white;
     text-align: center;
@@ -27,12 +27,18 @@ body{
 h1{
     color: white;
     text-align: center;
-    font-size: 5em;
+    font-size: 5em; 
 }
 
-.contenedor{
+ .contenedor{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+} */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
 }
