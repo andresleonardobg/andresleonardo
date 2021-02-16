@@ -8,13 +8,45 @@ Vue.component('sidebar',{
                         <h1>Andres Leonardo.</h1>
                         <h3 class="text-muted">Programador</h3>
                     </div>
-                    <options></options>
+                    <div>
+                        <ul class="w-100 p-0" >
+                            <li class="nav-item">
+                                <a class="nav-link text-white" @click="Page0"> 
+                                {{enlaces[0]}} 
+                                </a>
+                                <a class="nav-link text-white" @click="Page1"> 
+                                {{enlaces[1]}} 
+                                </a>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
                 <social></social>
             </aside>
-            <about></about>
+            <about v-if="pagina == 0"></about>
+            <info v-if="pagina == 1"></info>
         </div>
     </div>
-    ` 
+    `,
+    data(){
+        return{
+            enlaces: [
+                "Sobre mi", 
+                "Proyectos"
+            ],
+            pagina : 0
+        }
+    },
+    methods: {
+        Page0: function () {
+          this.pagina = 0
+          console.log('pagina 0')
+        },
+        Page1: function () {
+            this.pagina = 1
+            console.log('pagina 1')
+        }
+    }
 })
 
