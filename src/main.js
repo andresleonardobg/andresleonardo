@@ -3,50 +3,39 @@ Vue.component('sidebar',{
     <div class="container-fluid">
         <div class="row min-vh-100">
             <aside class="col-md-3 p-0 bg-dark">
-                <nav class="navbar flex-column aling-items-center py-5 text-center ">
-                    <div class="text-center p-3 text-white">
+                <nav class="navbar flex-column aling-items-center py-5 text-center">
+                    <div class="text-center p-3 text-white position-fixed">
                         <h1>Andres Leonardo.</h1>
                         <h3 class="text-muted">Programador</h3>
-                    </div>
-                    <div>
                         <ul class="w-100 p-0" >
-                            <li class="nav-item">
-                                <a class="nav-link text-white" @click="Page0"> 
-                                {{enlaces[0]}} 
+                            <li class="nav-item" v-for="(enlace, index) in enlaces">
+                                <a class="nav-link text-white" @click="page(index)"> 
+                                {{enlace}} 
                                 </a>
-                                <a class="nav-link text-white" @click="Page1"> 
-                                {{enlaces[1]}} 
-                                </a>
-                            </li>
                             </li>
                         </ul>
-                    </div>
-                </nav>
-                <social></social>
+                        <social></social>
+                    </div>                   
+                </nav>                
             </aside>
-            <about v-if="pagina == 0"></about>
-            <info v-if="pagina == 1"></info>
+            <info v-if="pagina == 0"></info>
+            <about v-if="pagina == 1"></about>
         </div>
     </div>
     `,
     data(){
         return{
             enlaces: [
-                "Sobre mi", 
-                "Proyectos"
+                "Proyectos", 
+                "Sobre mi"
             ],
             pagina : 0
         }
     },
     methods: {
-        Page0: function () {
-          this.pagina = 0
-          console.log('pagina 0')
+        page: function (page) {
+          this.pagina = page
         },
-        Page1: function () {
-            this.pagina = 1
-            console.log('pagina 1')
-        }
     }
 })
 

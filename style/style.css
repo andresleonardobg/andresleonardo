@@ -15,9 +15,13 @@ h2{
 
 li{
     font-size: 20px;
+    list-style: none;
 }
 
 .alignVertical{
     top: 10%;
 }
 
+a{
+    cursor: pointer;
+}
