@@ -3,7 +3,7 @@ Vue.component('info',{
     <main class="col px-0 flex-grow-1">
         <div class="container py-3">
             <div class="row row-cols-3 justify-content-center ">
-                <div class="card col m-2" style="width: 18rem;" v-for="card in cards">
+                <div class="card col m-2 animate__animated animate__fadeInRight" style="width: 18rem;" v-for="card in cards">
                     <img class="card-img-top" v-bind:src="card.img" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{card.titulo}}</h5>

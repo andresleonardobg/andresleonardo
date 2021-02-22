@@ -1,9 +1,13 @@
 Vue.component('about',{
     template:/*html*/`
-    <div class="col text-white justify-content-left d-flex" id="about">
+    <div 
+    class="col text-white justify-content-left d-flex 
+    animate__animated animate__fadeIn" 
+    id="about">
         <div class= "w-50 h-50 position-relative alignVertical justify-content-left">
-            <h2 class="p-3"><u>Sobre mi.</u></h2>
-            <p class= "p-2 text-left position-relative " style="top: 10px; background-color: rgb(33,37,41,0.4); ">
+            <h2 class="p-3 
+            animate__animated animate__fadeInDown animate__delay-1s"><u>Sobre mi.</u></h2>
+            <p class= "p-2 text-left position-relative animate__animated animate__fadeIn animate__delay-2s" style="top: 10px; background-color: rgb(33,37,41,0.4); ">
             Soy <b>desarrollador de software</b>, en gran parte autodidacta. 
             Me encanta buscar y aprender sobre nuevas tecnologías tanto de software como de hardware, 
             aunque con un enfoque más al desarrollo web haciendo uso de sus principales tecnologías como <b>html</b>, <b>css</b> y <b>javascript</b>.<br><br> 
