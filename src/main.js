@@ -6,10 +6,10 @@ Vue.component('sidebar',{
                 <nav class="navbar flex-column aling-items-center py-5 text-center">
                     <div class="text-center p-3 text-white position-fixed">
                         <h1>Andres Leonardo.</h1>
-                        <h3 class="text-muted">Programador</h3>
+                        <h3 class="text-muted">Soft­ware Development</h3>
                         <ul class="w-100 p-0" >
                             <li class="nav-item" v-for="(enlace, index) in enlaces">
-                                <a class="nav-link text-white" @click="page(index)"> 
+                                <a class="nav-link" @click="page(index)" id="nav"> 
                                 {{enlace}} 
                                 </a>
                             </li>
@@ -29,7 +29,7 @@ Vue.component('sidebar',{
                 "Proyectos", 
                 "Sobre mi"
             ],
-            pagina : 0
+            pagina : 1
         }
     },
     methods: {

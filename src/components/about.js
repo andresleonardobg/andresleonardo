@@ -1,20 +1,17 @@
 Vue.component('about',{
     template:/*html*/`
-    <div class="col text-white justify-content-center d-flex ">
-        <div class= "bg-success bg-dark w-75 h-75 d-flex position-relative alignVertical">
-            <img src="img/yojpg.jpg" class = "p-3 w-50"></img>
-            <div class="justify-content-center text-center w-50">
-                <h2 class="p-3">Sobre mi.</h2>
-                <p class= "p-2 text-center position-relative" style="top: 10px;">
-                What is Lorem Ipsum?
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-            </div>
+    <div class="col text-white justify-content-left d-flex" id="about">
+        <div class= "w-50 h-50 position-relative alignVertical justify-content-left">
+            <h2 class="p-3"><u>Sobre mi.</u></h2>
+            <p class= "p-2 text-left position-relative " style="top: 10px; background-color: rgb(33,37,41,0.4); ">
+            Soy <b>desarrollador de software</b>, en gran parte autodidacta. 
+            Me encanta buscar y aprender sobre nuevas tecnologías tanto de software como de hardware, 
+            aunque con un enfoque más al desarrollo web haciendo uso de sus principales tecnologías como <b>html</b>, <b>css</b> y <b>javascript</b>.<br><br> 
+            También <b>Vue.js</b> y <b>Bootstrap</b> con los he construido esta página y en ocasiones también <b>Electron.js</b> para crear aplicaciones de escritorio con tecnologías web.<br><br> 
+            En mi tiempo libre me gusta aprender a realizar videojuegos usando motores como <b>Godot</b> el cual tiene un lenguaje nativo basado en <b>python</b> o también <b>Unity</b> 
+            en el que he aprendido un poco de <b>C#</b> y gracias a esto también he aprendido a usar programas como <b>Photoshop</b> y <b>Blender</b> para modelado 3d.<br><br>
+            Espero que alguno de los proyectos que encuentres aquí te gusten y sirvan para aplicarlos en tus proyectos.
+            </p>
         </div>
     </div>
     `
