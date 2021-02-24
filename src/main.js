@@ -29,7 +29,7 @@ Vue.component('sidebar',{
                 "Proyectos", 
                 "Sobre mi"
             ],
-            pagina : 1
+            pagina : 0
         }
     },
     methods: {

@@ -1,23 +1,23 @@
-Vue.component('info',{
-    template:/*html*/`
-    <main class="col px-0 flex-grow-1">
-        <project v-if="projects != ''" :proyecto="projects"></project>
-        <div class="container py-3" v-if="projects == ''">
-            <div class="row row-cols-3 justify-content-center ">
-                <div class="card col m-2 animate__animated animate__fadeInRight" style="width: 18rem;" v-for="(card, index) in cards">
-                    <img class="card-img-top" v-bind:src="card.img" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{card.titulo}}</h5>
-                        <p class="card-text">{{card.descripcion}}</p>
-                        <a href="#" class="btn btn-dark" @click="showProject(index)">Ver mas</a>
-                    </div>
-                </div>
+Vue.component('project',{
+    template: /*html*/`
+    <div>
+        <div v-for = "(card, id) in cards" >
+
+            <div v-if="id == proyecto">
+                <h2>{{card.titulo}}</h2>
+                <p>{{card.descripcion}}</p>
             </div>
-        </div>  
-    </main>  
+            
+        </div>
+    </div>
+    
     `,
+
+    props:['proyecto'],
+
+
     data(){
-        return{
+        return {
             cards : {
                 servoArm: {
                     img : "img/servomotor.jpg",
@@ -49,16 +49,7 @@ Vue.component('info',{
                     titulo: "Pads",
                     descripcion : "Creación de Pads usando piezoelectricos y Arduino usando la comunicación MIDI para ulizarse en diferentes programas enfocados a la musica."
                 }                
-            },
-
-            projects : ''
-        }
-
-    },
-
-    methods :{
-        showProject: function(proj) {
-            this.projects = proj
+            } 
         }
     }
 })
