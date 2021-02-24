@@ -15,12 +15,42 @@
         </div>
         <div class="social">
             <nav>
-                <a href="https://twitter.com/AndresL97587552" ><i class="fab fa-twitter"></i></a>
-                <a href="https://soundcloud.com/andres-leonardo-801321306" ><i class="fab fa-soundcloud"></i></a>
+                <a href="https://twitter.com/AndresLeoBG" ><i class="fab fa-twitter"></i></a>
+                <a href="https://soundcloud.com/andres-leonardo-bg" ><i class="fab fa-soundcloud"></i></a>
                 <a href="https://github.com/andresleonardobg"><i class="fab fa-github"></i></a>
                 <a href="https://www.youtube.com/channel/UCZSr0GC79LQF-RRAcTaVJpg?view_as=subscriber"><i class="fab fa-youtube"></i></a>
             </nav>
         </div>
     </div>
+<<<<<<< Updated upstream
+=======
+    
+    <!-- componentes -->
+    <script src="./src/main.js"></script>
+    <script src="./src/components/social.js"></script>
+    <script src="./src/components/info.js"></script>
+    <script src="./src/components/card.js"></script>
+    <script src="./src/components/about.js"></script>
+
+    <script>
+
+    const store = new Vuex.Store({
+    state: {
+        page: 0
+        },
+    mutations:{
+        changePage(pagina){
+            console.log(pagina)
+        }
+    }  
+    })
+
+    new Vue({
+        el: '#app',
+        store: store
+    })
+    </script>
+    
+>>>>>>> Stashed changes
 </body>
 </html>
