@@ -36,3 +36,8 @@ li{
     background-image: url("../img/yo.jpg");
     background-size: cover;
 }
+
+.img{
+    height: 350px;
+    width: 350px;
+}

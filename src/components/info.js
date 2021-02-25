@@ -8,7 +8,7 @@ Vue.component('info',{
                     <div class="card-body">
                         <h5 class="card-title">{{card.titulo}}</h5>
                         <p class="card-text">{{card.descripcion}}</p>
-                        <a href="#" class="btn btn-dark" @click="showProject(index , 2)">Ver mas</a>
+                        <a class="btn btn-dark" @click="showProject(index , 2)">Ver mas</a>
                     </div>
                 </div>
             </div>

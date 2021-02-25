@@ -2,12 +2,18 @@ Vue.component('project',{
     template: /*html*/`
 
     <div 
-    class="col text-dark justify-content-left d-flex 
+    class="col justify-content-left d-flex 
     animate__animated animate__fadeIn">
-        <div class= "w-50 h-50 position-relative alignVertical justify-content-left">
-            <div v-for = "(card, id) in cards" v-if="id == project">
-                <h2>{{card.titulo}}</h2>
-                <p>{{card.descripcion}}</p>            
+        <div class= "position-relative justify-content-center mx-5 my-5">
+            <div v-for = "(card, id) in cards" v-if="id == project" class="justify-content-center">
+                <h2 class="text-center">{{card.titulo}}</h2>
+                <p class="px-5">{{card.descripcion}}</p>
+                <div class="container">
+                    <div class="row justify-content-center border mb-3" >
+                        <img class="img py-3" v-for="img in card.img" v-bind:src="img" >
+                    </div>
+                </div>
+                <p class="px-5">{{card.descripcion}}</p>           
             </div>
         </div>
     </div>    
@@ -16,9 +22,9 @@ Vue.component('project',{
         return {
             cards : {
                 servoArm: {
-                    img : "img/servomotor.jpg",
+                    img : ["img/servomotor.jpg"],
                     titulo: "Control Servomotor",
-                    descripcion : "Servomotor controlado por comunicación serial usando Arduino y Processing como interfaz grafica."
+                    descripcion : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
                 },
                 nodeRed: {
                     img : "img/nodeRed.png",
