@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+body{
+    font-family:'Playfair Display', serif;;
+}
+
+h1{
+    font-weight:bolder;
+    font-size: 70px;
+}
+
+h2{
+    font-size: 50px;
+}
+
+li{
+    font-size: 20px;
+    list-style: none;
+}
+
+.alignVertical{
+    top: 10%;
+}
+
+#nav{
+    cursor: pointer;
+    color: white;
+}
+
+#nav:hover{
+    background-color: white;
+    color: black;
+}
+
+#about{
+    background-image: url("../img/yo.jpg");
+    background-size: cover;
+}
+
+.img{
+    height: 350px;
+    width: 350px;
+}
