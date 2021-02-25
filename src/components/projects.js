@@ -1,21 +1,17 @@
 Vue.component('project',{
     template: /*html*/`
-    <div>
-        <div v-for = "(card, id) in cards" >
 
-            <div v-if="id == proyecto">
+    <div 
+    class="col text-dark justify-content-left d-flex 
+    animate__animated animate__fadeIn">
+        <div class= "w-50 h-50 position-relative alignVertical justify-content-left">
+            <div v-for = "(card, id) in cards" v-if="id == project">
                 <h2>{{card.titulo}}</h2>
-                <p>{{card.descripcion}}</p>
+                <p>{{card.descripcion}}</p>            
             </div>
-            
         </div>
-    </div>
-    
+    </div>    
     `,
-
-    props:['proyecto'],
-
-
     data(){
         return {
             cards : {
@@ -51,5 +47,9 @@ Vue.component('project',{
                 }                
             } 
         }
+    },
+
+    computed: {
+        ...Vuex.mapState(['project'])
     }
 })

@@ -37,8 +37,22 @@
     <script src="./src/components/projects.js"></script>
 
     <script>
+
+        const store = new Vuex.Store({
+        state: {
+            count: 1,
+            project: 'servoArm'
+        },
+        mutations: {
+            increment(state, page) {
+            state.count = page.amount
+            }
+        }
+        })
+
         new Vue({
-            el: '#app'
+            el: '#app',
+            store
         })
     </script>
     

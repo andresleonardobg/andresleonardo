@@ -18,8 +18,9 @@ Vue.component('sidebar',{
                     </div>                   
                 </nav>                
             </aside>
-            <info v-if="pagina == 0"></info>
-            <about v-if="pagina == 1"></about>
+            <info v-if="count == 0"></info>
+            <about v-if="count == 1"></about>
+            <project v-if="count == 2" ></project>
         </div>
     </div>
     `,
@@ -28,14 +29,17 @@ Vue.component('sidebar',{
             enlaces: [
                 "Proyectos", 
                 "Sobre mi"
-            ],
-            pagina : 0
+            ]
         }
     },
     methods: {
         page: function (page) {
-          this.pagina = page
-        },
+            this.$store.state.count = page
+        }
+    },
+
+    computed: {
+        ...Vuex.mapState(['count'])
     }
 })
 
