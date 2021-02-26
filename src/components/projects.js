@@ -29,7 +29,7 @@ Vue.component('project',{
                     herramientas: "Este es un pequeño proyecto en el cual tiene la finalidad de poder convertirse en un sistema de control de brazo mecánico basado en Arduino. Inicialmente empecé este proyecto creando un pequeño programa utilizando el lenguaje de programación Processing basado en java el cual simplifica un poco este lenguaje ya que fue creado con la finalidad de introducir a principiantes en la programación y artistas.",
                     descripcion : "Lo primero que realice fue creando un objeto llamado potenciómetro lo cual como su nombre indica funcionaria al igual que uno físico, controlaría el nivel de voltaje. Una vez ya creado lo siguiente fue programar una placa Arduino el cual se puede programar con el lenguaje C/C++, donde conecte un potenciómetro físico y un servomotor a la placa donde su funcionalidad era a medida que movía el potenciómetro el servomotor se movía. Después de ya probado lo básico lo siguiente fue poder realizar una conexión serial lo cual me serviría para poder comunicar el pequeño programa que he creado con Processing directamente con la placa de Arduino, una vez realizado esto cree utilice la función map() para poder modificar los valores del potenciómetro a los valores del rango en grados que se puede mover el servomotor.",
                     repositorio: {
-                        repo1 : "https://github.com/andresleonardobg/servoArm"
+                        servo : "https://github.com/andresleonardobg/servoArm"
                     },
                     siguiente: "Al tratar de crear un nuevo objeto potenciómetro y conectar otro servomotor a la placa no responden de manera correcta por lo cual espero encontrar la solución para poder actualizar y seguir con un nuevo paso."
                 },
@@ -47,7 +47,7 @@ Vue.component('project',{
                     herramientas: "Este es un videojuego que está siendo desarrollado con Godot engine, un motor de videojuegos opensource creado en argentina y que mantiene una comunidad muy activa. Tiene un lenguaje nativo basado en Python lo cual lo hace una herramienta fácil y rápida de aprender. He estado estudiándolo por mi cuenta en mi tiempo libre ya que mas que jugar a videojuegos me gusta saber como se hacen y este motor me parece una buena herramienta para empezar a crear ya que cuenta con su propio lenguaje llamado GDscript aunque también puede usarse C# o C++ y tambien posee visualscript.",
                     descripcion : "Este proyecto lo he iniciado para probar los conocimientos que he adquirido al estudiarlo a la par tambien he aprendido a manejar otras herramientas opensource como gimp(edición de imagen), krita(dibujo), lmms(música) o blender(3d). En este momento su funcionalidad ha sido terminada he podido implementar su gestión de estados, comunicación entre nodos y escenas que es como el motor trabaja, similar a componentes en frameworks como Vue.",
                     repositorio: {
-                        repo1 : "https://github.com/andresleonardobg/Cinco"
+                        videojuego : "https://github.com/andresleonardobg/Cinco"
                     },
                     siguiente: "El videojuego esta en su fase final hace falta su parte grafica ya que en este momento se encuentra en borrador y ajustar la caja de diálogos que he creado por lo cual se espera poder publicarlo a finales de mes de marzo de 2021."
                 },
