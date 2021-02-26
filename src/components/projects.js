@@ -1,6 +1,5 @@
 Vue.component('project',{
     template: /*html*/`
-
     <div 
     class="col justify-content-left d-flex 
     animate__animated animate__fadeIn">
