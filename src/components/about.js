@@ -8,7 +8,7 @@ Vue.component('about',{
             <h2 class="p-3 
             animate__animated animate__fadeInDown animate__delay-1s"><u>Sobre mi.</u></h2>
             <p class= "p-2 text-left position-relative animate__animated animate__fadeIn animate__delay-2s" style="top: 10px; background-color: rgb(33,37,41,0.4); ">
-            Soy <b>desarrollador de software</b>, en gran parte autodidacta. 
+            Soy tecnico programador de software. 
             Me encanta buscar y aprender sobre nuevas tecnologías tanto de software como de hardware, 
             aunque con un enfoque más al desarrollo web haciendo uso de sus principales tecnologías como <b>html</b>, <b>css</b> y <b>javascript</b>.<br><br> 
             También <b>Vue.js</b> y <b>Bootstrap</b> con los he construido esta página y en ocasiones también <b>Electron.js</b> para crear aplicaciones de escritorio con tecnologías web.<br><br> 
