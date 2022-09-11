@@ -18,14 +18,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
-
 let info = []
 
 async function get_data(){
     const querySnapshot = await getDocs(collection(db, "projects"));
 
     querySnapshot.forEach((doc) => {
-    console.log(doc.id, " => ", doc.data());
     info.push(doc.data())
     }) 
 }
@@ -33,5 +31,6 @@ async function get_data(){
 get_data()
 
 export{
-    info
+  db,
+  info
 }

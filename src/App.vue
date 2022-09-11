@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
     <div>
-      <router-link to="/" >Proyectos</router-link>
-      <router-link to="/about">Sobre mi</router-link>
+      <router-link to="/andresleonardo/" >Proyectos</router-link>
+      <router-link to="/andresleonardo/about">Sobre mi</router-link>
     </div>
     <h1>
         Andres Leonardo
@@ -25,6 +25,7 @@
 <script>
 import FooterPage from './components/FooterPage.vue';
 import Projects from "./components/Projects.vue";
+import ContentProject from './components/ContentProject.vue'
 
 export default {
   name: 'App',
@@ -35,7 +36,8 @@ export default {
   },
   components : {
     FooterPage,
-    Projects
+    Projects,
+    ContentProject
   },
   methods:{
     darkLight: function(c){

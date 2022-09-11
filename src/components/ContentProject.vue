@@ -21,7 +21,7 @@
 
 <script>
 import { info } from "../firebase"
-import '@splidejs/vue-splide/css';
+import '@splidejs/vue-splide/css'
 
 export default {
     name: 'ContentProject',
@@ -38,7 +38,6 @@ export default {
             for (var i = 0; i < info.length; i++){
                 var obj = info[i]
                 if(obj.slug == this.$route.params.id){
-                    console.log(obj)
                     return obj
                 }
             }
@@ -48,7 +47,6 @@ export default {
         let element = document.getElementById("text")
         element.innerHTML = this.create.description
     }
-
 }
 </script>
 

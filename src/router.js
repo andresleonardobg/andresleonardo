@@ -5,15 +5,15 @@ import ContentProject from "./components/ContentProject.vue";
 
 const routes = [
     { 
-        path: "/", 
+        path: "/andresleonardo/", 
         component: Projects 
     },
     { 
-        path: "/about", 
+        path: "/andresleonardo/about", 
         component: AboutMe
     },
     {
-        path: "/:id",
+        path: "/andresleonardo/:id",
         component: ContentProject 
     }
 ];

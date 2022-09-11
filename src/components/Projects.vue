@@ -22,19 +22,30 @@
 </template>
 
 <script>
-import { info } from "../firebase"
+import { getDocs, collection } from "firebase/firestore"
+import { db } from "../firebase"
 
 export default {
     name: "Projects",
     data(){
         return{
-            projects: info
+            projects: []
         }
     },
     methods: {
         showProject : function(destination){
-            this.$router.push("/" + destination);
+            this.$router.push("/andresleonardo/" + destination);
+        },
+        get_data: async function(){
+            const querySnapshot = await getDocs(collection(db, "projects"));
+
+            querySnapshot.forEach((doc) => {
+            this.projects.push(doc.data())
+            }) 
         }
+    },
+    mounted(){
+        this.get_data()
     }
 }
 </script>
