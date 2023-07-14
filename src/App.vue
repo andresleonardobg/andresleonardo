@@ -1,8 +1,9 @@
 <template>
+  <div class="noise"></div>
   <div id="nav">
     <div>
-      <a @click="showComponent('Projects', '#aboutMe')">Proyectos</a>
-      <a @click="showComponent('AboutMe', '#projects')">Sobre mi</a>
+      <span class="option_nav" @click="showComponent('Projects', '#aboutMe')">Proyectos</span>
+      <span class="option_nav" @click="showComponent('AboutMe', '#projects')">Sobre mi</span>
     </div>
     <h1>
         Andres Leonardo
@@ -66,27 +67,26 @@ export default {
       style.setProperty('--dark-color', c ? '#282828' : '#DBD4CC')
       style.setProperty('--light-color-opacity', c ? '#2828283f' : '#dbd4cc36')
       style.setProperty('--box-shadow-firts', c ? '#bab4ad' : '#1c1c1c')
-      style.setProperty('--box-shadow-second', c ? '#fcf4eb' : '#343434')      
+      style.setProperty('--box-shadow-second', c ? '#fcf4eb' : '#343434')
+      style.setProperty('--border-card-project', c ? '#bebebe' : '#333333')      
 
       this.color = c
       
     },
     showComponent: function(nameComponent, id){
+      let component
+
       if(this.currentComponent == 'ContentProject'){
-        let component = document.querySelector('#contentProject')
-        component.classList.remove('animate__fadeIn')
-        component.classList.add('animate__fadeOut')
-        setTimeout(() => {
-          this.currentComponent = nameComponent        
-        }, 500);
+        component = document.querySelector('#contentProject')
       }else if(this.currentComponent != nameComponent){
-        let component = document.querySelector(id)
-        component.classList.remove('animate__fadeIn')
-        component.classList.add('animate__fadeOut')
-        setTimeout(() => {
-          this.currentComponent = nameComponent        
-        }, 500);
+        component = document.querySelector(id)
       }
+
+      component.classList.remove('animate__fadeIn')
+      component.classList.add('animate__fadeOut')
+      setTimeout(() => {
+        this.currentComponent = nameComponent        
+      }, 500);
 
     },
     getInfoProject(info){
@@ -110,11 +110,25 @@ export default {
     --dark-color: #282828;
     --box-shadow-firts : #bab4ad;
     --box-shadow-second : #fcf4eb;
+    --border-card-project : #d1d1d1;
   }
 
   body { 
     font-family: 'Josefin Sans', sans-serif;
     background-color: var(--light-color); 
+  }
+
+  .noise{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    opacity: .035;
+    z-index: 1000;
+    pointer-events: none;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/web-page-6656c.appspot.com/o/noise.gif?alt=media&token=f50c4912-2135-49af-97a4-b50c9b3c56a2');
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -152,7 +166,7 @@ export default {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 30px;
+    margin: 30px 30px 0px 30px;
   }
 
   #contents{
@@ -173,7 +187,7 @@ export default {
       font-weight: 900;
       font-size: 50px;
       text-transform: uppercase;
-      margin: 30px 0px;
+      margin: 30px 30px 20px 30px;
   }
 
   a{
@@ -244,9 +258,10 @@ export default {
     border-radius: 50%;
   }
 
-  a{
-    text-decoration: underline;
-    
+  .option_nav{
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
   }
 
   @media screen and (max-width: 768px){

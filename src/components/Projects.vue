@@ -1,21 +1,16 @@
 <template>
-    <div style="width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    overflow: scroll;
-    overflow-x: hidden;">
-        <div class="project shadow_light" v-for=" index in projects" :key="index">
-            <img :src="index.image[0]" :alt="index.name" >
-            <div class="texts">
-                <h2 @click="sendProjectInfo(index)">
-                    {{index.name}}
-                </h2>
-                <p>
-                    {{index.description.substring(0,120)+".."}}
-                </p>
+    <div class="content_cards">
+        <div class="content_card" v-for=" index in projects" :key="index">
+            <div class="project_card shadow_light" @click="sendProjectInfo(index)">
+                <img :src="index.image[0]" :alt="index.name" >
+                <div class="texts">
+                    <h2>
+                        {{index.name}}
+                    </h2>
+                    <p>
+                        {{index.description.substring(0,120)+".."}}
+                    </p>
+                </div>
             </div>
         </div>
     </div>     
@@ -40,17 +35,42 @@ export default {
 </script>
 
 <style scoped>
-
-    .project{
-        max-width: 300px;
-        max-height: 400px;
-        margin: 20px 0px;
-        padding: 10px 0px;
-        transition-duration: .5s;
+    .content_cards{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: scroll;
+        overflow-x: hidden;
+        padding-top: 10px;
+        cursor: pointer;
     }
 
-    .project:hover{
+    .content_card{
+        max-width: 300px;
+        max-height: 370px;
+        width: 300px;
+        height: 370px;
+        margin: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .project_card{
+        max-width: 300px;
+        max-height: 370px;
+        width: 298px;
+        height: 368px;
         transition-duration: .5s;
+        border: solid 1px var(--border-card-project);
+        border-radius: 10px;
+    }
+
+    .project_card:hover{
+        transition-duration: .5s;
+        width: 300px;
+        height: 370px;
         padding: 10px 0px;
         border-radius: 10px;
         background: var(--light-color);
@@ -65,9 +85,10 @@ export default {
         filter: grayscale();
         transition-duration: .5s;
         object-fit: cover;
+        border-radius: 10px;
     }
 
-    .project:hover img{
+    .project_card:hover img{
         filter: grayscale(0);
         transition-duration: .5s;
     }
@@ -87,7 +108,6 @@ export default {
         margin: 5px auto;
         font-weight: bold;
         text-transform: uppercase;
-        cursor: pointer;
     }
 
 </style>
