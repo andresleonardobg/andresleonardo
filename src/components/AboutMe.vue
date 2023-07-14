@@ -22,7 +22,7 @@ export default {
         align-items: center;
         border-radius: 5px;
         padding: 30px;
-        background-image: url('https://firebasestorage.googleapis.com/v0/b/web-page-6656c.appspot.com/o/about.jpg?alt=media&token=d41671f5-eb9b-4f26-bf9d-48ae28786944');
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/web-page-6656c.appspot.com/o/about.webp?alt=media&token=497d0b0e-caa8-4c6c-9466-d4620a82e4aa');
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
