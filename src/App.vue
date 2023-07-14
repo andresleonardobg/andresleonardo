@@ -16,7 +16,7 @@
       <Projects 
       id="projects" 
       class="animate__animated animate__fadeIn animate__faster"
-       
+      v-if="currentComponent == 'Projects'" 
       @projectInfo="getInfoProject" 
       >
       </Projects>

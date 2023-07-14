@@ -21,7 +21,7 @@ const db = getFirestore(app)
 
 const docRef = doc(db, 'projects', 'Nusqx1rTJivSAqhXXy6M')
 const docSnap = await getDoc(docRef)
-let info = docSnap.data() 
+const info = docSnap.data() 
 
 export{
   db,
