@@ -10,8 +10,7 @@
   "dependencies": {
     "@splidejs/vue-splide": "^0.6.7",
     "firebase": "^9.9.4",
-    "vue": "^3.2.25",
-    "vue-router": "^4.1.2"
+    "vue": "^3.2.25"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",

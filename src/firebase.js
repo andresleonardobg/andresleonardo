@@ -20,7 +20,9 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 const docRef = doc(db, 'projects', 'Nusqx1rTJivSAqhXXy6M')
-const docSnap = await getDoc(docRef)
+const docSnap = async () => {
+  await getDoc(docRef)
+}
 let info = docSnap.data()
 
 export{
