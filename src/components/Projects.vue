@@ -28,8 +28,7 @@ export default {
     name: "Projects",
     data(){
         return{
-            projects: info,
-            projectt : Object
+            projects: info
         }
     },
     methods: {

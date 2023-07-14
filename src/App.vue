@@ -16,20 +16,23 @@
       <Projects 
       id="projects" 
       class="animate__animated animate__fadeIn animate__faster"
-      v-if="currentComponent == 'Projects'" 
+       
       @projectInfo="getInfoProject" 
-      ></Projects>
+      >
+      </Projects>
       <ContentProject 
       id="contentProject" 
       class="animate__animated animate__fadeIn animate__faster"
       v-if="currentComponent == 'ContentProject'" 
       :project="infoProject" 
-      ></ContentProject>
+      >
+      </ContentProject>
       <AboutMe 
       id="aboutMe" 
       class="animate__animated animate__fadeIn animate__faster"
       v-if="currentComponent == 'AboutMe'" 
-      ></AboutMe>
+      >
+      </AboutMe>
   </div>  
   <FooterPage />
 </template>
