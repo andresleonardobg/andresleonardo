@@ -1,16 +1,16 @@
 <template>
     <div style="width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      column-gap: 20px;
-      overflow: scroll;
-      overflow-x: hidden;">
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    overflow: scroll;
+    overflow-x: hidden;">
         <div class="project shadow_light" v-for=" index in projects" :key="index">
             <img :src="index.image[0]" :alt="index.name" >
             <div class="texts">
-                <h2 v-on:click="showProject(index.slug)">
+                <h2 @click="sendProjectInfo(index)">
                     {{index.name}}
                 </h2>
                 <p>
@@ -18,34 +18,24 @@
                 </p>
             </div>
         </div>
-    </div>        
+    </div>     
 </template>
 
 <script>
-import { getDocs, collection } from "firebase/firestore"
-import { db } from "../firebase"
+import { info } from "../firebase"
 
 export default {
     name: "Projects",
     data(){
         return{
-            projects: []
+            projects: info,
+            projectt : Object
         }
     },
     methods: {
-        showProject : function(destination){
-            this.$router.push("/andresleonardo/" + destination);
-        },
-        get_data: async function(){
-            const querySnapshot = await getDocs(collection(db, "projects"));
-
-            querySnapshot.forEach((doc) => {
-            this.projects.push(doc.data())
-            }) 
+        sendProjectInfo: function ( info ) {
+            this.$emit('projectInfo', info)
         }
-    },
-    mounted(){
-        this.get_data()
     }
 }
 </script>

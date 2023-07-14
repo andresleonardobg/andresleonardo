@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
     <div>
-      <router-link to="/andresleonardo/" >Proyectos</router-link>
-      <router-link to="/andresleonardo/about">Sobre mi</router-link>
+      <a @click="showComponent('Projects', '#aboutMe')">Proyectos</a>
+      <a @click="showComponent('AboutMe', '#projects')">Sobre mi</a>
     </div>
     <h1>
         Andres Leonardo
@@ -13,11 +13,23 @@
     </label>
   </div>
   <div id="contents">
-    <router-view v-slot="{ Component }">
-      <transition enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut" mode="out-in">
-        <component :is="Component"></component>
-      </transition>      
-    </router-view>
+      <Projects 
+      id="projects" 
+      class="animate__animated animate__fadeIn animate__faster"
+      v-if="currentComponent == 'Projects'" 
+      @projectInfo="getInfoProject" 
+      ></Projects>
+      <ContentProject 
+      id="contentProject" 
+      class="animate__animated animate__fadeIn animate__faster"
+      v-if="currentComponent == 'ContentProject'" 
+      :project="infoProject" 
+      ></ContentProject>
+      <AboutMe 
+      id="aboutMe" 
+      class="animate__animated animate__fadeIn animate__faster"
+      v-if="currentComponent == 'AboutMe'" 
+      ></AboutMe>
   </div>  
   <FooterPage />
 </template>
@@ -26,18 +38,22 @@
 import FooterPage from './components/FooterPage.vue';
 import Projects from "./components/Projects.vue";
 import ContentProject from './components/ContentProject.vue'
+import AboutMe from "./components/AboutMe.vue";
 
 export default {
   name: 'App',
   data(){
     return{
       color: true,
+      currentComponent: 'Projects',
+      infoProject: Object
     }
   },
   components : {
     FooterPage,
     Projects,
-    ContentProject
+    ContentProject,
+    AboutMe
   },
   methods:{
     darkLight: function(c){
@@ -51,6 +67,28 @@ export default {
 
       this.color = c
       
+    },
+    showComponent: function(nameComponent, id){
+      if(this.currentComponent == 'ContentProject'){
+        let component = document.querySelector('#contentProject')
+        component.classList.remove('animate__fadeIn')
+        component.classList.add('animate__fadeOut')
+        setTimeout(() => {
+          this.currentComponent = nameComponent        
+        }, 500);
+      }else if(this.currentComponent != nameComponent){
+        let component = document.querySelector(id)
+        component.classList.remove('animate__fadeIn')
+        component.classList.add('animate__fadeOut')
+        setTimeout(() => {
+          this.currentComponent = nameComponent        
+        }, 500);
+      }
+
+    },
+    getInfoProject(info){
+      this.infoProject = info
+      this.showComponent('ContentProject', '#projects')
     }
   },
   mounted(){
@@ -203,8 +241,9 @@ export default {
     border-radius: 50%;
   }
 
-  .router-link-active{
+  a{
     text-decoration: underline;
+    
   }
 
   @media screen and (max-width: 768px){

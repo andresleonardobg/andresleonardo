@@ -6,7 +6,7 @@ import ContentProject from "./components/ContentProject.vue";
 const routes = [
     { 
         path: "/andresleonardo/", 
-        component: Projects 
+        component: Projects,
     },
     { 
         path: "/andresleonardo/about", 
@@ -14,7 +14,8 @@ const routes = [
     },
     {
         path: "/andresleonardo/:id",
-        component: ContentProject 
+        name: 'project',
+        component: ContentProject
     }
 ];
 

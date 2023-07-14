@@ -2,50 +2,37 @@
     <div class="post">
         <div class="content" >
             <h2 class="content_project animate__fadeInRight">
-                {{create.name}}
+                {{project.name}}
             </h2>
             <p class="content_project animate__fadeInUp" id="text">
-                
             </p>
         </div>
         <div class="content_image">
-            <Splide v-if="create.image.length > 1" :options="{ rewind: true, pagination: false, autoplay: true, type: 'loop', pauseOnHover: true, height: '630px', interval: 2000}" aria-label="My Favorite Images">
-                <SplideSlide v-for=" index in create.image" :key="index">
+            <Splide v-if="project.image.length > 1" :options="{ rewind: true, pagination: false, autoplay: true, type: 'loop', pauseOnHover: true, height: '630px', interval: 2000}" aria-label="My Favorite Images">
+                <SplideSlide v-for=" index in project.image" :key="index">
                     <img :src="index" alt="Sample 1">
                 </SplideSlide>
             </Splide>
-            <img v-else :src="create.image[0]" alt="project" class="main_image">
+            <img v-else :src="project.image[0]" alt="project" class="main_image">
         </div>        
     </div>
 </template>
 
 <script>
-import { info } from "../firebase"
 import '@splidejs/vue-splide/css'
 
 export default {
     name: 'ContentProject',
-    data(){
-        return{
-            projects: []
+    props:{
+        project: {
+            type: Object
         }
     },
     computed:{
-        destinationSlug(){
-            return this.$route.params.id
-        },
-        create(){
-            for (var i = 0; i < info.length; i++){
-                var obj = info[i]
-                if(obj.slug == this.$route.params.id){
-                    return obj
-                }
-            }
-        }
-    }, 
+    },
     mounted(){
         let element = document.getElementById("text")
-        element.innerHTML = this.create.description
+        element.innerHTML = this.project.description
     }
 }
 </script>
