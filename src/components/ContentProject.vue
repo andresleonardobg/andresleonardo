@@ -4,7 +4,9 @@
       <h2 class="content_project animate__fadeInRight">
         {{ project.name }}
       </h2>
-      <p class="content_project animate__fadeInUp" id="text"></p>
+      <p class="content_project animate__fadeInUp" id="text">
+        {{ project.description }}
+      </p>
     </div>
     <div class="content_image">
       <Splide
@@ -29,22 +31,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import "@splidejs/vue-splide/css";
+import { useComponentStore } from "../stores/currentContent";
 
-export default {
-  name: "ContentProject",
-  props: {
-    project: {
-      type: Object,
-    },
-  },
-  computed: {},
-  mounted() {
-    let element = document.getElementById("text");
-    element.innerHTML = this.project.description;
-  },
-};
+const project = useComponentStore().contentProject;
 </script>
 
 <style scoped>

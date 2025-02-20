@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer">
+  <footer>
     <ul>
       <li>
         <a
@@ -24,14 +24,14 @@
       </li>
     </ul>
     <div>
-      <h6 style="text-align: center">{{ year }}</h6>
+      <p style="text-align: center">{{ year }}</p>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: "FooterPage",
+  name: "Footer",
   data() {
     return {
       year: new Date().getFullYear(),
@@ -41,35 +41,30 @@ export default {
 </script>
 
 <style scoped>
-#footer {
+footer {
   width: 100%;
   padding: 10px 0px;
   position: fixed;
   bottom: 0;
   right: 0;
-  background: var(--light-color);
+  grid-area: footer;
 }
 
-#footer ul {
+footer ul {
   display: flex;
   justify-content: center;
   margin: 10px auto;
   padding: 0px;
 }
 
-#footer ul li {
+footer ul li {
   list-style: none;
 }
 
-#footer ul li a {
+footer ul li a {
   text-decoration: none;
   color: var(--second_color);
   font-size: 25px;
   padding: 0 10px;
-}
-
-h6 {
-  margin: 0px auto;
-  font-family: "Inconsolata", monospace;
 }
 </style>

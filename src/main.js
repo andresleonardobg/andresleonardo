@@ -1,7 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import VueSplide from '@splidejs/vue-splide'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import App from "./App.vue";
+import VueSplide from "@splidejs/vue-splide";
 
-createApp(App)
-    .use(VueSplide)
-    .mount('#app')
+const app = createApp(App);
+const pinia = createPinia();
+app.use(VueSplide);
+app.use(pinia);
+app.mount("#app");

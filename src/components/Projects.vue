@@ -3,7 +3,7 @@
     <div class="content_card" v-for="(item, index) in projects" :key="index">
       <div
         class="project_card shadow_light"
-        @click="sendProjectInfo(item)"
+        @click="components.setCurrentComponent('contentProject', item)"
         :style="{ animationDuration: index + 's' }"
       >
         <img :src="item.image[0]" :alt="item.name" />
@@ -20,25 +20,12 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { info } from "../firebase";
+import { useComponentStore } from "../stores/currentContent";
 
-export default {
-  name: "Projects",
-  data() {
-    return {
-      projects: info,
-    };
-  },
-  methods: {
-    sendProjectInfo: function (info) {
-      this.$emit("projectInfo", info);
-    },
-    setAnimationStyle(duration) {
-      return `animation-duration: ${duration}s`;
-    },
-  },
-};
+const components = useComponentStore();
+const projects = info;
 </script>
 
 <style scoped>
@@ -51,7 +38,6 @@ export default {
   overflow: scroll;
   overflow-x: hidden;
   cursor: pointer;
-  padding: 150px 0px;
 }
 
 .content_card {

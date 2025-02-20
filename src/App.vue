@@ -1,52 +1,14 @@
 <template>
+  <Header @dark-light="darkLight" @show-component="showComponent" />
+  <Main :component="currentComponent" />
+  <Footer />
   <div class="noise"></div>
-  <nav id="nav">
-    <div class="options_nav">
-      <span class="option_nav" @click="showComponent('Projects', '#aboutMe')"
-        >Proyectos</span
-      >
-      <span class="option_nav" @click="showComponent('AboutMe', '#projects')"
-        >Sobre mi</span
-      >
-    </div>
-    <h1>Andres Leonardo</h1>
-    <div class="container_switch">
-      <label class="switch">
-        <input type="checkbox" />
-        <span class="slider round" @click="darkLight(!color)"></span>
-      </label>
-    </div>
-  </nav>
-  <div id="contents">
-    <Projects
-      id="projects"
-      class="animate__animated animate__fadeIn animate__faster"
-      v-if="currentComponent == 'Projects'"
-      @projectInfo="getInfoProject"
-    >
-    </Projects>
-    <ContentProject
-      id="contentProject"
-      class="animate__animated animate__fadeIn animate__faster"
-      v-if="currentComponent == 'ContentProject'"
-      :project="infoProject"
-    >
-    </ContentProject>
-    <AboutMe
-      id="aboutMe"
-      class="animate__animated animate__fadeIn animate__faster"
-      v-if="currentComponent == 'AboutMe'"
-    >
-    </AboutMe>
-  </div>
-  <FooterPage />
 </template>
 
 <script>
-import FooterPage from "./components/FooterPage.vue";
-import Projects from "./components/Projects.vue";
-import ContentProject from "./components/ContentProject.vue";
-import AboutMe from "./components/AboutMe.vue";
+import Header from "./components/Header.vue";
+import Main from "./components/Main.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -54,14 +16,12 @@ export default {
     return {
       color: true,
       currentComponent: "Projects",
-      infoProject: Object,
     };
   },
   components: {
-    FooterPage,
-    Projects,
-    ContentProject,
-    AboutMe,
+    Header,
+    Main,
+    Footer,
   },
   methods: {
     darkLight: function (c) {
@@ -149,6 +109,14 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: var(--dark-color);
+  width: 100%;
+  display: grid;
+  grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    / 1fr;
+  gap: 0px;
 }
 
 /* width */
@@ -175,15 +143,13 @@ h6 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 30px;
-  position: fixed;
   width: 100%;
-  background: var(--light-color);
-  z-index: 10;
+  grid-area: header;
 }
 
-#contents {
+#main {
   max-width: 1060px;
+  height: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -191,6 +157,7 @@ h6 {
   column-gap: 20px;
   overflow: scroll;
   overflow-x: hidden;
+  grid-area: main;
 }
 
 h1 {
