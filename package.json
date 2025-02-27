@@ -10,12 +10,14 @@
   "dependencies": {
     "@splidejs/vue-splide": "^0.6.7",
     "animate.css": "^4.1.1",
-    "firebase": "^9.9.4",
+    "devicon": "^2.16.0",
+    "firebase": "^11.3.1",
+    "lucide-vue-next": "^0.475.0",
     "pinia": "^2.3.1",
     "vue": "^3.2.25"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.3.3",
-    "vite": "^2.9.9"
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.2.0"
   }
 }
