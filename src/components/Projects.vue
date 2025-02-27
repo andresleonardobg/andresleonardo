@@ -29,6 +29,16 @@ const projects = info;
 </script>
 
 <style scoped>
+img {
+  height: 250px;
+  width: 250px;
+  margin: 10px auto;
+  filter: grayscale();
+  transition-duration: 0.5s;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 .content_cards {
   width: 100%;
   height: 100%;
@@ -37,7 +47,6 @@ const projects = info;
   flex-wrap: wrap;
   overflow: scroll;
   overflow-x: hidden;
-  cursor: pointer;
 }
 
 .content_card {
@@ -49,6 +58,7 @@ const projects = info;
   display: flex;
   align-items: center;
   animation: fadeIn;
+  cursor: pointer;
 }
 
 .project_card {
@@ -70,16 +80,6 @@ const projects = info;
   background: var(--light-color);
   box-shadow: 9px 9px 23px var(--box-shadow-firts),
     -9px -9px 23px var(--box-shadow-second);
-}
-
-img {
-  height: 250px;
-  width: 250px;
-  margin: 10px auto;
-  filter: grayscale();
-  transition-duration: 0.5s;
-  object-fit: cover;
-  border-radius: 10px;
 }
 
 .project_card:hover img {

@@ -29,31 +29,20 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: "Footer",
-  data() {
-    return {
-      year: new Date().getFullYear(),
-    };
-  },
-};
+<script setup>
+const year = new Date().getFullYear();
 </script>
 
 <style scoped>
 footer {
   width: 100%;
   padding: 10px 0px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  grid-area: footer;
 }
 
 footer ul {
   display: flex;
   justify-content: center;
-  margin: 10px auto;
+  margin: auto;
   padding: 0px;
 }
 
@@ -65,6 +54,10 @@ footer ul li a {
   text-decoration: none;
   color: var(--second_color);
   font-size: 25px;
-  padding: 0 10px;
+}
+
+p {
+  margin: 5px;
+  margin-bottom: 0;
 }
 </style>

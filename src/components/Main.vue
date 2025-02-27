@@ -17,4 +17,18 @@ import { useComponentStore } from "../stores/currentContent";
 const component = useComponentStore();
 </script>
 
-<style scoped></style>
+<style scoped>
+#main {
+  width: 100%;
+  max-width: 1060px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+  grid-area: main;
+}
+</style>

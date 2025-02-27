@@ -4,9 +4,11 @@
       <h2 class="content_project animate__fadeInRight">
         {{ project.name }}
       </h2>
-      <p class="content_project animate__fadeInUp" id="text">
-        {{ project.description }}
-      </p>
+      <p
+        v-html="description"
+        class="content_project animate__fadeInUp"
+        id="text"
+      ></p>
     </div>
     <div class="content_image">
       <Splide
@@ -32,13 +34,21 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import "@splidejs/vue-splide/css";
 import { useComponentStore } from "../stores/currentContent";
 
 const project = useComponentStore().contentProject;
+const description = ref(project.description);
 </script>
 
 <style scoped>
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .post {
   width: 100%;
   height: 100%;
@@ -52,6 +62,9 @@ const project = useComponentStore().contentProject;
   height: 100%;
   overflow-y: scroll;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .content_image {
@@ -60,12 +73,6 @@ const project = useComponentStore().contentProject;
   height: 100%;
   overflow: hidden;
   border-radius: 0px 5px 5px 0px;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .content h2 {
