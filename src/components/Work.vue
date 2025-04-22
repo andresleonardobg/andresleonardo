@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div class="container">
+    <div class="work">
       <div class="fijo">
         <h2>
           <a href="https://www.kennertech.com.co/" target="_blank"
@@ -82,5 +82,24 @@ img {
 img:hover {
   filter: none;
   transition: 0.5s;
+}
+
+.container {
+  width: 100%;
+  max-width: 1060px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+  grid-area: main;
+}
+
+.work{
+  max-width: 1440px;
+  margin: auto;
 }
 </style>
