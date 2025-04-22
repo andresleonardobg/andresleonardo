@@ -1,7 +1,8 @@
 <template>
   <div id="principal">
     <Header :darkLight="darkLight" :color="color" />
-    <Main :component="currentComponent" />
+    <router-view />
+    <!--<Main :component="currentComponent" />-->
     <Footer />
   </div>
   <div class="noise"></div>

@@ -2,18 +2,9 @@
   <header>
     <nav id="nav">
       <div class="options_nav">
-        <a class="option_nav" @click="component.setCurrentComponent('work')">
-          Trabajo
-        </a>
-        <a
-          class="option_nav"
-          @click="component.setCurrentComponent('projects')"
-        >
-          Proyectos
-        </a>
-        <a class="option_nav" @click="component.setCurrentComponent('aboutMe')">
-          Sobre mi
-        </a>
+        <RouterLink to="/">Trabajo</RouterLink>
+        <RouterLink to="/projects">Proyectos</RouterLink>
+        <RouterLink to="/about-me">Sobre mi</RouterLink>
       </div>
       <h1>Andres Leonardo</h1>
       <div class="container_switch">
@@ -37,6 +28,7 @@ import { defineProps } from "vue";
 import { useComponentStore } from "../stores/currentContent";
 import { Moon } from "lucide-vue-next";
 import { Sun } from "lucide-vue-next";
+import { RouterLink } from "vue-router";
 
 const component = useComponentStore();
 const props = defineProps({
